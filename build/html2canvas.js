@@ -2662,7 +2662,7 @@ window.html2canvas = function(elements, opts) {
   canvas,
   options = {
     // general
-    logging: false,
+    logging: true,
     elements: elements,
     background: "#fff",
 

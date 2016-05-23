@@ -13,12 +13,20 @@ _html2canvas.Util.log = function(a) {
   }
 };
 
+/**
+ * 清空两边空白字符串
+ */
 _html2canvas.Util.trimText = (function(isNative){
   return function(input) {
     return isNative ? isNative.apply(input) : ((input || '') + '').replace( /^\s+|\s+$/g , '' );
   };
 })(String.prototype.trim);
 
+/**
+ * 数字变为浮点数
+ * @param v
+ * @returns {Number}
+ */
 _html2canvas.Util.asFloat = function(v) {
   return parseFloat(v);
 };
@@ -79,6 +87,7 @@ _html2canvas.Util.parseBackgroundImage = function (value) {
             prefix =
             definition =
             block = '';
+        _html2canvas.Util.log(results);
     };
 
     appendResult();
@@ -199,7 +208,7 @@ function toPX(element, attribute, value ) {
 
         // Put in the new values to get a computed value out
         if (rsLeft) {
-            element.runtimeStyle.left = element.currentStyle.left;
+            element.runtimeStyle.left = element..left;
         }
         style.left = attribute === "fontSize" ? "1em" : (value || 0);
         value = style.pixelLeft + "px";
